@@ -9,8 +9,7 @@
 <body>
 	<% session.removeAttribute("un");
 		response.sendRedirect("dangnhap.jsp");
-		/* session.removeAttribute("gio");
-		response.sendRedirect("htsach"); */
+		
 	%>
 </body>
 </html>

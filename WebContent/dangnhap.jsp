@@ -4,7 +4,7 @@
 <%@page import="bo.giohangbo"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Electronix Store</title>
+<title>Cửa hàng bán máy tính online</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="htmaytinh.css" />
 <!--[if IE 6]>

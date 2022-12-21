@@ -1,198 +1,142 @@
-<%@page import="bean.dnadminbean"%>
 <%@page import="bean.xacnhanbean"%>
-<%@page import="bean.khachhangbean"%>
-
+<%@page import="java.util.ArrayList"%>
+<%@page import="bean.loaibean"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@page import="bo.giohangbo"%>
-<%@page import="bo.loaibo"%>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Cửa hàng bán máy tính online</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="htmaytinh.css" />
+<!--[if IE 6]>
+<link rel="stylesheet" type="text/css" href="iecss.css" />
+<![endif]-->
+<script type="text/javascript" src="js/boxOver.js"></script>
 
+  <style>
+body {font-family: Arial, Helvetica, sans-serif;}
+form {border: 3px solid #f1f1f1;}
 
-<%@page import="java.util.ArrayList"%>
-
-<%@page import="bean.loaibean"%>
-<%@page import="dao.loaidao"%>
-
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <!-- basic -->
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-      <!-- site metas -->
-      <title>Grand Coffee</title>
-      <meta name="keywords" content="">
-      <meta name="description" content="">
-      <meta name="author" content="">
-      <!-- bootstrap css -->
-      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-      <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <!-- Responsive-->
-      <link rel="stylesheet" href="css/responsive.css">
-      <!-- fevicon -->
-      <link rel="icon" href="images/fevicon.png" type="image/gif" />
-      <!-- Scrollbar Custom CSS -->
-      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
-      <!-- Tweaks for older IEs-->
-      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <!-- owl stylesheets --> 
-      <link rel="stylesheet" href="css/owl.carousel.min.css">
-      <link rel="stylesheet" href="css/owl.theme.default.min.css">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-         	<style>
-     		.htgio-img-title {
-			width: 40px;
-			height: 40px;
-			object-fit: cover;
-			border-radius: 50%;
-		}
-		
-		.row-item {
-			border: 1px solid #999;
-			height: 50px;
-		}
-		
-		.test {
-			font-size: 24px;
-			font-weight: 400;
-			cursor: pointer;
-			color: red;
-		}
-		.test:link {
-			text-decoration: none;
-		}
-		
-		.btn-action {
-			display: flex;
-			justify-content: center;
-		}
-		
-		.btn-action-1 + .btn-action-1 {
-			margin-left: 40px;
-		}
-		
-		.btn-action-1 {
-			font-size: 20px;
-			color: black;
-			border: 1px solid #111;
-			border-radius: 6px;
-			padding: 8px 12px;
-			background: #f0f0f0;
-			
-		}
-		
-		.btn-action-1:hover {
-			text-decoration: none;
-			cursor: pointer;
-			
-		}
-		
-		.input-quantity {
-			width: 42px;
-			
-		}
-  		.search2	 {
-  			    margin: 5px;
-  		}
-  		.but {
-		  	padding-top: 3px;
-		    padding-bottom: 3px;
-		
-		    
-		    padding-left: 18px;
-		    padding-right: 18px;
-		    color: gray;
-		    background: #f76d37;
-  		}
-  		.QL{
-  		
-  		 	display: flex;
-  		 	justify-content: center;
-  	
-  		}
-  		.nav-link {
-  
-    font-size: 20px;
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-		.about_section {
-		    margin-top: -59px;
-		}
-		.input-quantity {
-    width: 196px;
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
 }
 
-  	</style>
-   </head>
-   <body>
-   <%ArrayList<loaibean> loai = (ArrayList<loaibean>)request.getAttribute("dsloai"); %>
-   
-      <!--header section start -->
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 15;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+<% 		
+	giohangbo gh = (giohangbo) session.getAttribute("gio"); %>
+	
+	
+<div id="main_container">
   
-      <!--header section start -->
-      <div class="header_section">
-         <div class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <div class="logo"><a href="index.html"><img src="images/logo.png"></a></div>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"aria-expanded="false" aria-label="Toggle navigation">
-               <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav ml-auto">
-                     <li class="nav-item">
-                        <a class="nav-link" href="admin">Home</a>
-                     </li>
-					 <li>
-					
-					      <% if (session.getAttribute("admin") == null){ %>
-					    	 <a  class="nav-link" href="ktdn"><span class="glyphicon glyphicon-user"></span>Log In</a>
-					      <%}else{ %>
-					    	 <a  a class="nav-link" href="#"><span class="glyphicon glyphicon-user">
-					    	 	<% dnadminbean kh =(dnadminbean)session.getAttribute("admin");
-						        out.print("hello "+ kh.getTenDangNhap()); %>
-					    	 </a>
-					      <%} %>
+    
+  <div id="header">
+    
+    <div class="oferte_content">
+      <div class="top_divider"><img src="images/header_divider.png" alt="" width="1" height="164" /></div>
+      <div class="oferta">
+      
+        <div class="oferta_content"> <img src="images/laptop.png" width="94" height="92" alt="" border="0" class="oferta_img" />
+          
+        </div>
+       <h2 style="position: absolute; right: 600px; font-size: 30px; font-family: Serif; color: white ">Cửa hàng bán Laptop S&T</h2>
+      <div class="top_divider"><img src="images/header_divider.png" alt="" width="1" height="164" /></div>
+    </div>
+    <!-- end of oferte_content-->
+  </div>
+  <div id="main_content">
+    <div id="menu_tab">
+      <div class="left_menu_corner"></div>
+      <ul class="menu">
+        <li><a href="htmaytinh" class="nav1"> Trang chủ</a></li>
+      
+        <li class="divider"></li>
+      
+        <li class="divider"></li>
+        <li><a href="loaiadmin" class="nav3">Quản lý loại</a></li>
+        <li class="divider"></li>
+       
+        <li><a href="#" class="nav3">Quản lý máy tính</a></li>
+        <li class="divider"></li>
+        <li><a href="xacnhanadmin" class="nav3">Xác nhận</a></li>
+        <li class="divider"></li>
+         <li><a href="dschuyentien" class="nav3">Danh sách chuyển tiền</a></li>
+        <li class="divider"></li>
+       <li>
+			      <% if (session.getAttribute("kh") == null){ %>
+			    	 <a href="ktdn" class="nav4"><span class="glyphicon glyphicon-user"></span>Log In</a>
+			      <%}else{ %>
+			    	 <a href="#" class="nav4"><span class="glyphicon glyphicon-user">
+			    	 	
+			    	 </a>
+			      <%} %>
+			      
+			      
 			      
 			      </a></li>
-                      <li class="nav-item">
-                        <a class="nav-link" href="xoaadmin.jsp"><i class="fa fa-sign-out" style="font-size:24px"></i></a>
-                     </li>
-				
-                  </ul>
-                  
-					  
-                    
-               </div>
-            </nav>
-         </div>
-      </div>
-      <!--header section end -->
-      <!-- banner section start -->
-     
-      <!-- banner section end -->
-      <!-- about section start -->
-      <div class="about_section layout_padding">
-         <div class="container">
-          		<div class="QL">
-          			 <a class="nav-link" href="loai">Quản lý loại</a>
-          			 <a class="nav-link" href="addcafe">Quản lý Máy Tính</a>
-          			 <a class="nav-link" href="xacnhanadmin">Xác Nhận Chuyển Tiền</a>
-          			 <a class="nav-link" href="dschuyentien">danh sách chuyển tiền</a>
-          			 
-          		</div>
-         </div>
-      <div class="view">
- 
-		
-	<h3 style="text-align: center; font-size: 40px">Danh sách chuyển tiền</h3>
- <table  width="1000" align="center"  style="padding: 0 15px"  border="1" >
+
+        
+        
+        <%--dsct --%>
+        <div class="center_title_bar">Danh sách chuyển tiền</div>
+        <table  width="1000" align="center"  style="padding: 0 15px"  border="1" >
  		<tr style="text-align: center" >
    			<td style="color: darkorange;">Họ Tên</td>
    			<td style="color: darkorange;">Tên sản phẩm</td>
@@ -216,82 +160,9 @@
      <%} %>  
 	  </table>
 	 </div>	
-         
-         
-      </div>
-      <!-- about section end -->
-      <!-- gallery section start -->
-     
-      <!-- services section start -->
-      
-      <!-- services section end -->
-      <!-- testimonial section start -->
-      
-      <!-- testimonial section end -->
-      <!-- contact section start -->
-      
-      <!-- contact section end -->
-      <!-- footer section start -->
-      <div class="footer_section layout_padding" style="    margin-top: 400px;">
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-3 col-sm-6">
-                  <h3 class="useful_text">About</h3>
-                  <p class="footer_text">consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation u</p>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <h3 class="useful_text">Menu</h3>
-                  <div class="footer_menu">
-                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <h1 class="useful_text">Useful Link</h1>
-                  <p class="dummy_text">Adipiscing Elit, sed do Eiusmod Tempor incididunt </p>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <h1 class="useful_text">Contact Us</h1>
-                  <div class="location_text">
-                     <ul>
-                        <li>
-                           <a href="#">
-                           <i class="fa fa-map-marker" aria-hidden="true"></i><span class="padding_left_10">Address : Loram Ipusm</span>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <i class="fa fa-phone" aria-hidden="true"></i><span class="padding_left_10">Call : +01 1234567890</span>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                           <i class="fa fa-envelope" aria-hidden="true"></i><span class="padding_left_10">Email : demo@gmail.com</span>
-                           </a>
-                        </li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- footer section end -->
-      <!-- copyright section start -->
-  
-      <!-- copyright section end -->
-      <!-- Javascript files-->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.min.js"></script>
-      <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-      <script src="js/custom.js"></script>     
-   </body>
+	 
+	 <%--end --%>
+	 
+	  </body>
 </html>
+         

@@ -9,7 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Electronix Store</title>
+<title>Cửa hàng bán máy tính online</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="htmaytinh.css" />
 <!--[if IE 6]>
@@ -175,7 +175,8 @@
   </div>
   
   <!-- end of main content -->
-  <nav aria-label="Page navigation example">
+ <div style="width:1000px; clear:both ; height:65px;">
+				<nav aria-label="Page navigation example">
 				  <ul class="pagination">
 						<%                //Button Previous
 					        int back = 0;
@@ -202,6 +203,7 @@
 				    <li class="page-item"><a class="page-link" href="htmaytinh?trang=<%=next%>">Next</a></li>
 				  </ul>
 				</nav>
+				</div>
   <div class="footer">
     <div class="left_footer"> <img src="images/footer_logo.png" alt="" width="170" height="49"/> </div>
     <div class="center_footer"> Template name. All Rights Reserved 2008<br />

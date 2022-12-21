@@ -9,7 +9,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Electronix Store</title>
+<title>Cửa hàng bán máy tính online</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="htmaytinh.css" />
 <!--[if IE 6]>
@@ -98,6 +98,7 @@
         <div class="oferta_content"> <img src="images/laptop.png" width="94" height="92" alt="" border="0" class="oferta_img" />
           
         </div>
+        <h2 style="position: absolute; right: 600px; font-size: 30px; font-family: Serif; color: white ">Cửa hàng bán Laptop S&T</h2>
        
       <div class="top_divider"><img src="images/header_divider.png" alt="" width="1" height="164" /></div>
     </div>
@@ -207,5 +208,6 @@
 		<a class="btn-action-1" href="thanhtoan">Thanh toán</a>
 	</div>
     <!-- end of menu tab -->
-    
+    </body>
+</html>
     
